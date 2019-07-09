@@ -5,6 +5,23 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <AssemblyName>BlazorQuery</AssemblyName>
     <RootNamespace>BlazorQuery</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>0.0.1</Version>
+    <Authors>KevinJPetersen</Authors>
+    <RepositoryUrl>https://github.com/kevinjpetersen/BlazorQuery</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/kevinjpetersen/BlazorQuery</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Blazor, Razor, jQuery, Query, CSharp, DOM, Manipulation</PackageTags>
+    <PackageReleaseNotes>Version 0.0.1 - 2019-07-09 | Functionality added
+* Added Select (Equivalent to $/jQuery, to select elements)
+* Added AddClass, RemoveClass,
+* Added Height (Set &amp; Get), Width (Set &amp; Get)
+* Added Text (Set &amp; Get)
+* Added CSS</PackageReleaseNotes>
+    <Description>BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.</Description>
+    <Copyright>MIT License</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +40,13 @@
 
   <ItemGroup>
     <EmbeddedResource Remove="wwwroot\jquery.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

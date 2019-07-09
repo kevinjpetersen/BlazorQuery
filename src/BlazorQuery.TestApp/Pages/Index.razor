@@ -6,21 +6,19 @@
 
 <button @onclick="@(async () => await Trigger())">Trigger</button>
 
-@functions {
+@code {
+
+    protected override async Task OnAfterRenderAsync()
+    {
+        await DOM.Select("h1").CSS("background-color", "red");
+
+        int width = await DOM.Select("h1").Width();
+        await DOM.Select("h1").Width(Convert.ToInt32(width / 2));
+    }
 
     async Task Trigger()
     {
-        int width = await DOM.Select("h1").AddClass("this-class-has-blue-bg").CSS("color", "rebeccapurple").Text("Both of these are now this").Width();
-        await DOM.ConsoleLog($"Width: {width}");
-
-        await DOM.Select("h1").Width(100);
-
-        int newWidth = await DOM.Select("h1").Width();
-        await DOM.ConsoleLog($"Width: {newWidth}");
-
-        string text = await DOM.Select("h1").Text();
-        await DOM.ConsoleLog($"Text: {text}");
-
+        await DOM.Select("h1").Text("Now this text is changed").CSS("color", "yellow");
     }
 
 }
