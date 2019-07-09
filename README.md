@@ -1,7 +1,7 @@
 # BlazorQuery
 BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.
 
-![Nuget](https://img.shields.io/nuget/v/BlazorQuery.svg) ![GitHub](https://img.shields.io/github/license/kevinjpetersen/BlazorQuery.svg)
+[![Nuget](https://img.shields.io/nuget/v/BlazorQuery.svg)](https://www.nuget.org/packages/BlazorQuery) [![GitHub](https://img.shields.io/github/license/kevinjpetersen/BlazorQuery.svg)](https://github.com/kevinjpetersen/BlazorQuery/blob/master/LICENSE)
 
 ## How to get started
 1. Install ``BlazorQuery`` through [Nuget](https://www.nuget.org/packages/BlazorQuery): ```Install-Package BlazorQuery```
