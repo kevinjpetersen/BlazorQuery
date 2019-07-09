@@ -31,9 +31,9 @@ namespace BlazorQuery
             return dom;
         }
 
-        public async Task<bool> AddClass(string className) => await JSRuntime.InvokeAsync<bool>(BlazorQueryList.AddClass, CurrentSelector, className);
-        public async Task<bool> RemoveClass(string className) => await JSRuntime.InvokeAsync<bool>(BlazorQueryList.RemoveClass, CurrentSelector, className);
-        public async Task<bool> CSS(string style, string styleValue) => await JSRuntime.InvokeAsync<bool>(BlazorQueryList.CSS, CurrentSelector, style, styleValue);
+        public async Task AddClass(string className) => await JSRuntime.InvokeAsync<Task>(BlazorQueryList.AddClass, CurrentSelector, className);
+        public async Task RemoveClass(string className) => await JSRuntime.InvokeAsync<Task>(BlazorQueryList.RemoveClass, CurrentSelector, className);
+        public async Task CSS(string style, string styleValue) => await JSRuntime.InvokeAsync<Task>(BlazorQueryList.CSS, CurrentSelector, style, styleValue);
 
 
     }

@@ -13,6 +13,6 @@
     return JSON.stringify(data);
 };
 
-window.BQ_AddClass = (selector, className) => { $(selector).addClass(className); return true; };
-window.BQ_RemoveClass = (selector, className) => { $(selector).removeClass(className); return true; };
-window.BQ_CSS = (selector, style, styleValue) => { $(selector).css(style, styleValue); return true; };
+window.BQ_AddClass = (selector, className) => { $(selector).addClass(className); };
+window.BQ_RemoveClass = (selector, className) => { $(selector).removeClass(className); };
+window.BQ_CSS = (selector, style, styleValue) => { $(selector).css(style, styleValue); };
