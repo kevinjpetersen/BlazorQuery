@@ -4,46 +4,23 @@
 <h1>Hello, DOM!</h1>
 <h1>Hello, Blazor!</h1>
 
-@if(headers != null)
-{
-    foreach (var element in headers.Elements)
+<button @onclick="@(async () => await Trigger())">Trigger</button>
+
+@functions {
+
+    async Task Trigger()
     {
-        <p><b>Text:</b> @element.Text | <b>Class:</b> @(string.IsNullOrWhiteSpace(element.ClassName) ? "No class yet" : element.ClassName)</p>
-    }
-}
+        int width = await DOM.Select("h1").AddClass("this-class-has-blue-bg").CSS("color", "rebeccapurple").Text("Both of these are now this").Width();
+        await DOM.ConsoleLog($"Width: {width}");
 
-<button @onclick="@(async () => await Select())">Select Elements</button>
-<button @onclick="@(async () => await CSS())">CSS (Red BG)</button>
-<button @onclick="@(async () => await CSS2())">CSS (Font Size 60px)</button>
-<button @onclick="@(async () => await AddClass())">Add Class</button>
-<button @onclick="@(async () => await RemoveClass())">Remove Class</button>
+        await DOM.Select("h1").Width(100);
 
-@code {
+        int newWidth = await DOM.Select("h1").Width();
+        await DOM.ConsoleLog($"Width: {newWidth}");
 
-    BlazorQueryDOM headers;
+        string text = await DOM.Select("h1").Text();
+        await DOM.ConsoleLog($"Text: {text}");
 
-    async Task Select()
-    {
-        headers = await DOM.Select("h1");
     }
 
-    async Task AddClass()
-    {
-        await headers.AddClass("this-class-has-blue-bg");
-    }
-
-    async Task RemoveClass()
-    {
-        await headers.RemoveClass("this-class-has-blue-bg");
-    }
-
-    async Task CSS()
-    {
-        await headers.CSS("background-color", "red");
-    }
-
-    async Task CSS2()
-    {
-        await headers.CSS("font-size", "60px");
-    }
 }

@@ -6,6 +6,11 @@ namespace BlazorQuery
 {
     public class BlazorQueryList
     {
+        // Utils List
+        public const string Utils_Alert = "BQ_Utils_Alert";
+        public const string Utils_ConsoleLog = "BQ_Utils_ConsoleLog";
+
+        // jQuery List
         public const string Add = "BQ_Add";
         public const string AddBack = "BQ_AddBack";
         public const string AddClass = "BQ_AddClass";
@@ -59,7 +64,8 @@ namespace BlazorQuery
         public const string Get = "BQ_Get";
         public const string Has = "BQ_Has";
         public const string HasClass = "BQ_HasClass";
-        public const string Height = "BQ_Height";
+        public const string Height_Set = "BQ_Height_Set";
+        public const string Height_Get = "BQ_Height_Get";
         public const string Hide = "BQ_Hide";
         public const string Hover = "BQ_Hover";
         public const string Html = "BQ_Html";
@@ -134,7 +140,8 @@ namespace BlazorQuery
         public const string SlideUp = "BQ_SlideUp";
         public const string Stop = "BQ_Stop";
         public const string Submit = "BQ_Submit";
-        public const string Text = "BQ_Text";
+        public const string Text_Set = "BQ_Text_Set";
+        public const string Text_Get = "BQ_Text_Get";
         public const string ToArray = "BQ_ToArray";
         public const string Toggle = "BQ_Toggle";
         public const string ToggleClass = "BQ_ToggleClass";
@@ -145,7 +152,8 @@ namespace BlazorQuery
         public const string Unload = "BQ_Unload";
         public const string Unwrap = "BQ_Unwrap";
         public const string Val = "BQ_Val";
-        public const string Width = "BQ_Width";
+        public const string Width_Set = "BQ_Width_Set";
+        public const string Width_Get = "BQ_Width_Get";
         public const string Wrap = "BQ_Wrap";
         public const string WrapAll = "BQ_WrapAll";
         public const string WrapInner = "BQ_WrapInner";
