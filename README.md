@@ -1,7 +1,18 @@
 # BlazorQuery
 BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.
 
-## Functionality currently supported (In alphabetical order)
+## How to get started
+
+## Change log
+- **Version 0.0.1 - 2019-07-09**
+  - Functionality added
+    - Added Select (Equivalent to $/jQuery, to select elements)
+    - Added AddClass, RemoveClass, 
+    - Added Height (Set & Get), Width (Set & Get)
+    - Added Text (Set & Get)
+    - Added CSS
+
+## Full list of functionality currently supported (In alphabetical order)
 - [ ] Add 
 - [ ] AddBack 
 - [x] AddClass 
