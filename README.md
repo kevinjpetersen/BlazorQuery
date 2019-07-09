@@ -2,6 +2,72 @@
 BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.
 
 ## How to get started
+1. Install ``BlazorQuery`` through [Nuget](https://www.nuget.org/packages/BlazorQuery): ```Install-Package BlazorQuery```
+2. Add the following in your applications ``_Host.cshtml`` file (jQuery) (If you already have jQuery, you can skip this step):
+```javascript
+<script src="_content/BlazorQuery/jQuery.js"></script>
+```
+3. Add the following in your applications ``_Host.cshtml`` file, AFTER your jQuery script tag: 
+```javascript
+<script src="_content/BlazorQuery/blazorQuery.js"></script>
+```
+4. Add the following Service to your applications ``Startup.cs`` file:
+```csharp
+services.AddBlazorQuery();
+```
+5. Setup is done, you can now go to "Usage" section
+
+## Usage
+**IMPORTANT NOTE:** A current limitation of Blazor means you cannot execute DOM Manipulation in a Prerendering state, so you can only use ``DOM`` functions in ``OnAfterRenderAsync`` or AFTER Prerendering has been done (For example through a button click or an eventhandler, etc.)
+
+**Example - CSS**
+```razor
+@page "/"
+@inject BlazorQueryDOM DOM
+
+<h1>Hello, DOM!</h1>
+<h1>Hello, Blazor!</h1>
+
+@code {
+    protected override async Task OnAfterRenderAsync()
+    {
+      await DOM.Select("h1").CSS("background-color", "red");
+    }
+}
+```
+
+**Example - Text**
+```razor
+@page "/"
+@inject BlazorQueryDOM DOM
+
+<h1>Hello, DOM!</h1>
+<h1>Hello, Blazor!</h1>
+
+@code {
+    protected override async Task OnAfterRenderAsync()
+    {
+      await DOM.Select("h1").Text("Now this text is changed");
+    }
+}
+```
+
+**Example - Combining Actions**
+```razor
+@page "/"
+@inject BlazorQueryDOM DOM
+
+<h1>Hello, DOM!</h1>
+<h1>Hello, Blazor!</h1>
+
+@code {
+    protected override async Task OnAfterRenderAsync()
+    {
+      await DOM.Select("h1").Text("Now this text is changed").CSS("color", "yellow");
+    }
+}
+```
+
 
 ## Change log
 - **Version 0.0.1 - 2019-07-09**
@@ -11,6 +77,7 @@ BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM M
     - Added Height (Set & Get), Width (Set & Get)
     - Added Text (Set & Get)
     - Added CSS
+
 
 ## Full list of functionality currently supported (In alphabetical order)
 - [ ] Add 
