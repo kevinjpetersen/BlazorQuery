@@ -1,4 +1,6 @@
 # BlazorQuery
+**Note:** Currently working to remove the jQuery dependency and make it completely Plain JS, but keep the jQuery syntax the same, without the jQuery.
+
 BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.
 
 [![Nuget](https://img.shields.io/nuget/v/BlazorQuery.svg)](https://www.nuget.org/packages/BlazorQuery) [![GitHub](https://img.shields.io/github/license/kevinjpetersen/BlazorQuery.svg)](https://github.com/kevinjpetersen/BlazorQuery/blob/master/LICENSE)
