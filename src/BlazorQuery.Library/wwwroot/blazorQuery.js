@@ -1,4 +1,5 @@
-﻿
+﻿"use strict";
+
 // jQuery Selector
 window.BQ_Select = (selector) => {
     var data = $(selector).map(function () {
@@ -26,6 +27,7 @@ window.BQ_CSS = (selector, style, styleValue) => { $(selector).css(style, styleV
 window.BQ_Height_Set = (selector, height) => { $(selector).height(height); };
 window.BQ_Width_Set = (selector, width) => { $(selector).width(width); };
 window.BQ_Text_Set = (selector, text) => { $(selector).text(text); };
+window.BQ_FadeOut = (selector) => { $(selector).fadeOut(5000, function () { alert('done');}); };
 
 // Functions - Chain-enders
 window.BQ_Height_Get = (selector) => { return $(selector).height(); };

@@ -40,6 +40,7 @@ namespace BlazorQuery
         public async Task<BlazorQueryDOM> Height(int height) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Height_Set, CurrentSelector, height); return this; }
         public async Task<BlazorQueryDOM> Width(int width) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Width_Set, CurrentSelector, width); return this; }
         public async Task<BlazorQueryDOM> Text(string text) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Text_Set, CurrentSelector, text); return this; }
+        public async Task<BlazorQueryDOM> FadeOut() { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.FadeOut, CurrentSelector); return this; }
 
         // Functions - Chain-enders
         public async Task<int> Height() => await JSRuntime.InvokeAsync<int>(BlazorQueryList.Height_Get, CurrentSelector);
@@ -57,6 +58,7 @@ namespace BlazorQuery
         public async static Task<BlazorQueryDOM> Height(this Task<BlazorQueryDOM> dom, int height) => await (await dom).Height(height);
         public async static Task<BlazorQueryDOM> Width(this Task<BlazorQueryDOM> dom, int width) => await (await dom).Width(width);
         public async static Task<BlazorQueryDOM> Text(this Task<BlazorQueryDOM> dom, string text) => await (await dom).Text(text);
+        public async static Task<BlazorQueryDOM> FadeOut(this Task<BlazorQueryDOM> dom) => await (await dom).FadeOut();
 
         // Functions - Chain-enders
         public async static Task<int> Height(this Task<BlazorQueryDOM> dom) => await (await dom).Height();
