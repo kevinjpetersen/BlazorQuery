@@ -10,10 +10,14 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        await DOM.Select("h1").CSS("background-color", "red");
+        if (firstRender)
+        {
+            await DOM.Select("h1").CSS("background-color", "red");
 
-        int width = await DOM.Select("h1").Width();
-        await DOM.Select("h1").Width(Convert.ToInt32(width / 2));
+            int width = await DOM.Select("h1").Width();
+            await DOM.Select("h1").Width(Convert.ToInt32(width / 2));
+        }
+        await base.OnAfterRenderAsync(firstRender);
     }
 
     async Task Trigger()
