@@ -1,14 +1,16 @@
 ﻿@page "/"
 @inject BlazorQueryDOM DOM
 
-<h1>Hello, DOM!</h1>
-<h1>Hello, Blazor!</h1>
+<h1 id="first_h1">Hello, DOM!</h1>
+<h1 id="second_h1">Hello, Blazor!</h1>
 
 <button @onclick="TriggerCSS">CSS</button>
 <button @onclick="TriggerWidth">Width</button>
 <button @onclick="TriggerHeight">Height</button>
 <button @onclick="TriggerText">Text</button>
 <button @onclick="TriggerFadeOut">FadeOut</button>
+<button @onclick="TriggerFadeOutFirst">FadeOutFirst</button>
+<button @onclick="TriggerFadeOutSecond">FadeOutSecond</button>
 
 @code {
 
@@ -45,7 +47,17 @@
 
     async Task TriggerFadeOut()
     {
-        await DOM.Select("h1").FadeOut();
+        await DOM.Select("h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
+    }
+
+    async Task TriggerFadeOutFirst()
+    {
+        await DOM.Select("#first_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
+    }
+
+    async Task TriggerFadeOutSecond()
+    {
+        await DOM.Select("#second_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
     }
 
 }
