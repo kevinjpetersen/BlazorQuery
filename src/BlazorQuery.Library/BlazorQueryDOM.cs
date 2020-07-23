@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace BlazorQuery
@@ -27,7 +24,7 @@ namespace BlazorQuery
             BlazorQueryDOM dom = new BlazorQueryDOM(JSRuntime);
             dom.CurrentSelector = selector;
             var data = await JSRuntime.InvokeAsync<string>(BlazorQueryList.Select, selector);
-            dom.Elements = JsonSerializer.Parse<List<BlazorQueryDOMElement>>(data);
+            dom.Elements = JsonSerializer.Deserialize<List<BlazorQueryDOMElement>>(data);
 
             return dom;
         }

@@ -4,11 +4,11 @@
 <h1>Hello, DOM!</h1>
 <h1>Hello, Blazor!</h1>
 
-<button @onclick="@(async () => await Trigger())">Trigger</button>
+<button @onclick="(async () => await Trigger())">Trigger</button>
 
 @code {
 
-    protected override async Task OnAfterRenderAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await DOM.Select("h1").CSS("background-color", "red");
 

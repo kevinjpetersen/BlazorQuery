@@ -23,7 +23,10 @@
 
 </head>
 <body>
-    <app>@(await Html.RenderComponentAsync<App>())</app>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+    @*<app>@(await Html.RenderComponentAsync<App>())</app>*@
 
     <script src="_framework/blazor.server.js"></script>
 
