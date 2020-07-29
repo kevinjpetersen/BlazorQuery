@@ -9,9 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.6" />
   </ItemGroup>
 
   <ItemGroup>
