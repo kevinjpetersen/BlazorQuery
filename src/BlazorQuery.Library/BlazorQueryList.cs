@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BlazorQuery
+namespace BlazorQuery.Library
 {
     public class BlazorQueryList
     {

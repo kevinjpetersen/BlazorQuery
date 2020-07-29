@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BlazorQuery.Extensions
+namespace BlazorQuery.Library.Extensions
 {
     public static class ServiceCollectionExtensions
     {
