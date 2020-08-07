@@ -1,15 +1,5 @@
 # BlazorQuery
 
-## Status of the project (from Sybaris)
-Searching a solution to wrap some JQuery API in blazor, I found the following repository : https://github.com/kevinjpetersen/BlazorQuery
-I found it very interesting, but outdated.
-I make some updates and I added a test app to use Blazor Webassembly.
-I do not have publish a nuget package yet, but as soon as the project will be sufficiently advanced, I will try to publish one...
-Note that my goal is to be helped from the community to quickly have a good cover of the wrapped API of JQuery.
-So don't hesitate to send Pull request...
-
-# Original notes (not from Sybaris)
-
 **Note:** Currently working to remove the jQuery dependency and make it completely Plain JS, but keep the jQuery syntax the same, without the jQuery.
 
 BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.
@@ -85,7 +75,7 @@ services.AddBlazorQuery();
 
 
 ## Change log
-- **Version 0.0.2 (Sybaris) - 2020-07-29**
+- **Version 0.0.2 (Sybaris) - 2020-07-29 https://github.com/sybaris/BlazorQuery **
   - Functionality added
     - Update projects to build with latest version of Blazor
 	- Migration from blazor preview --> blazor release
