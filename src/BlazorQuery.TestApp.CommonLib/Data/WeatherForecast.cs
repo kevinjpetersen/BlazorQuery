@@ -1,6 +1,6 @@
 using System;
 
-namespace BlazorQuery.TestApp.Data
+namespace BlazorQuery.TestApp.CommonLib.Data
 {
     public class WeatherForecast
     {

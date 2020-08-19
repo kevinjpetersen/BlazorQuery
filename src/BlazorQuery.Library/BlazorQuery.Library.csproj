@@ -1,31 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <AssemblyName>BlazorQuery</AssemblyName>
-    <RootNamespace>BlazorQuery</RootNamespace>
+    <AssemblyName>BlazorQuery.Library</AssemblyName>
+    <RootNamespace>BlazorQuery.Library</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.0.1</Version>
-    <Authors>KevinJPetersen</Authors>
+    <Version>0.0.2</Version>
+    <Authors>KevinJPetersen and contributors</Authors>
     <RepositoryUrl>https://github.com/kevinjpetersen/BlazorQuery</RepositoryUrl>
     <PackageProjectUrl>https://github.com/kevinjpetersen/BlazorQuery</PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Blazor, Razor, jQuery, Query, CSharp, DOM, Manipulation</PackageTags>
-    <PackageReleaseNotes>Version 0.0.1 - 2019-07-09 | Functionality added
+    <PackageReleaseNotes>Version 0.0.2 - 2020-07-29 | Functionality added
+* Update projects to build with latest version of Blazor
+* Migration from blazor preview --&gt; blazor release
+* Starting wrapping fadein and fadeout
+* New testapp to test with blazor webassembly, and refactoring to make common code between the 2 testaspp
+Version 0.0.1 - 2019-07-09 | Functionality added
 * Added Select (Equivalent to $/jQuery, to select elements)
 * Added AddClass, RemoveClass,
 * Added Height (Set &amp; Get), Width (Set &amp; Get)
 * Added Text (Set &amp; Get)
 * Added CSS</PackageReleaseNotes>
-    <Description>BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.</Description>
+    <Description>BlazorQuery is a Blazor Library that wraps jQuery in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.</Description>
     <Copyright>MIT License</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.6" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">

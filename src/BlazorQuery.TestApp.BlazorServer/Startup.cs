@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BlazorQuery.TestApp.Data;
-using BlazorQuery.Extensions;
+using BlazorQuery.TestApp.CommonLib.Data;
+using BlazorQuery.Library.Extensions;
 
 namespace BlazorQueryApp.TestApp
 {

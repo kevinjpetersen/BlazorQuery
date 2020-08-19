@@ -1,4 +1,5 @@
 # BlazorQuery
+
 **Note:** Currently working to remove the jQuery dependency and make it completely Plain JS, but keep the jQuery syntax the same, without the jQuery.
 
 BlazorQuery is a Blazor Library that wraps jQuery completely in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.
@@ -72,8 +73,13 @@ services.AddBlazorQuery();
 }
 ```
 
-
 ## Change log
+- **Version 0.0.2 - 2020-07-29**
+  - Functionality added
+    - Update projects to build with latest version of Blazor
+	- Migration from blazor preview --> blazor release
+	- Starting wrapping fadein and fadeout
+	- New testapp to test with blazor webassembly, and refactoring to make common code between the 2 testaspp
 - **Version 0.0.1 - 2019-07-09**
   - Functionality added
     - Added Select (Equivalent to $/jQuery, to select elements)
@@ -82,6 +88,9 @@ services.AddBlazorQuery();
     - Added Text (Set & Get)
     - Added CSS
 
+## Contributors
+- **Kevin J. Petersen https://github.com/kevinjpetersen**
+- **Sybaris https://github.com/sybaris**
 
 ## Full list of functionality currently supported (In alphabetical order)
 - [ ] Add 
