@@ -73,9 +73,8 @@ services.AddBlazorQuery();
 }
 ```
 
-
 ## Change log
-- **Version 0.0.2 (Sybaris) - 2020-07-29 https://github.com/sybaris/BlazorQuery **
+- **Version 0.0.2 - 2020-07-29**
   - Functionality added
     - Update projects to build with latest version of Blazor
 	- Migration from blazor preview --> blazor release
@@ -89,6 +88,9 @@ services.AddBlazorQuery();
     - Added Text (Set & Get)
     - Added CSS
 
+## Contributors
+- **Kevin J. Petersen https://github.com/kevinjpetersen**
+- **Sybaris https://github.com/sybaris**
 
 ## Full list of functionality currently supported (In alphabetical order)
 - [ ] Add 

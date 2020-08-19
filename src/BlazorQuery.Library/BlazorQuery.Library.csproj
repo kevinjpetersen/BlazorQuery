@@ -9,9 +9,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>0.0.2</Version>
-    <Authors>Sybaris (Jean-Pierre Planas), KevinJPetersen</Authors>
-    <RepositoryUrl>https://github.com/sybaris/BlazorQuery</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/sybaris/BlazorQuery</PackageProjectUrl>
+    <Authors>KevinJPetersen and contributors</Authors>
+    <RepositoryUrl>https://github.com/kevinjpetersen/BlazorQuery</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/kevinjpetersen/BlazorQuery</PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Blazor, Razor, jQuery, Query, CSharp, DOM, Manipulation</PackageTags>
     <PackageReleaseNotes>Version 0.0.2 - 2020-07-29 | Functionality added
