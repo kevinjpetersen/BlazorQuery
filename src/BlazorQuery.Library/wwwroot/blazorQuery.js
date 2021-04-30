@@ -4,18 +4,18 @@ var blazorQueryInterop = blazorQueryInterop || {};
 
 // jQuery Selector
 blazorQueryInterop.BQ_Select = (selector) => {
-    var data = $(selector).map(function () {
-        return {
-            Selector: selector,
-            ClassName: $(this).attr('class'),
-            Id: $(this).attr('id'),
-            Name: $(this).attr('name'),
-            Value: $(this).attr('value'),
-            Text: $(this).text()
-        };
-    }).get();
+	var data = $(selector).map(function () {
+		return {
+			Selector: selector,
+			ClassName: $(this).attr('class'),
+			Id: $(this).attr('id'),
+			Name: $(this).attr('name'),
+			Value: $(this).attr('value'),
+			Text: $(this).text()
+		};
+	}).get();
 
-    return JSON.stringify(data);
+	return JSON.stringify(data);
 };
 
 // Utils
@@ -30,10 +30,10 @@ blazorQueryInterop.BQ_Height_Set = (selector, height) => { $(selector).height(he
 blazorQueryInterop.BQ_Width_Set = (selector, width) => { $(selector).width(width); };
 blazorQueryInterop.BQ_Text_Set = (selector, text) => { $(selector).text(text); };
 blazorQueryInterop.BQ_FadeOut = (selector, dotNetObjectRef) => {
-    $(selector).fadeOut(2000,
-        function () {
-            dotNetObjectRef.invokeMethodAsync("ActionCallback", $(selector).text());
-        });
+	$(selector).fadeOut(2000,
+		function () {
+			dotNetObjectRef.invokeMethodAsync("ActionCallback", $(selector).text());
+		});
 };
 
 // Functions - Chain-enders
