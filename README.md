@@ -78,7 +78,7 @@ services.AddBlazorQuery();
   - Migrated to .NET 5 and updated all packages to .NET 5 versions
   - Some cleanup, such as moving BlazorQueryDOMHelpers to a new file
   - Fixed a bug where Height and Width on DOM element needed to be double
-  - Added "href" to DOM element (needed it for another project)
+  - Added "href" to DOM element
 - **Version 0.0.2 - 2020-07-29**
   - Functionality added
     - Update projects to build with latest version of Blazor
