@@ -6,31 +6,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>BlazorQuery.TestApp.BlazorServer</title>
-	<base href="~/" />
-	<environment include="Development">
-		<link rel="stylesheet" href="_content/BlazorQuery.TestApp.CommonLib/css/bootstrap/bootstrap.min.css" />
-	</environment>
-	<environment exclude="Development">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			  asp-fallback-href="_content/BlazorQuery.TestApp.CommonLib/css/bootstrap/bootstrap.min.css"
-			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-			  crossorigin="anonymous"
-			  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
-	</environment>
-	<link href="_content/BlazorQuery.TestApp.CommonLib/css/site.css" rel="stylesheet" />
-	<link href="BlazorQuery.TestApp.BlazorServer.styles.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlazorQuery.TestApp.BlazorServer</title>
+    <base href="~/" />
+    <environment include="Development">
+        <link rel="stylesheet" href="_content/BlazorQuery.TestApp.CommonLib/css/bootstrap/bootstrap.min.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="_content/BlazorQuery.TestApp.CommonLib/css/bootstrap/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link href="_content/BlazorQuery.TestApp.CommonLib/css/site.css" rel="stylesheet" />
+    <link href="BlazorQuery.TestApp.BlazorServer.styles.css" rel="stylesheet" />
 
 </head>
 <body>
-	<app>
-		<component type="typeof(App)" render-mode="ServerPrerendered" />
-	</app>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
 
-	<script src="_framework/blazor.server.js"></script>
-	<script src="_content/BlazorQuery.Library/jQuery.js"></script>
-	<script src="_content/BlazorQuery.Library/blazorQuery.js"></script>
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/BlazorQuery.Library/jQuery.js"></script>
+    <script src="_content/BlazorQuery.Library/blazorQuery.js"></script>
 </body>
 </html>

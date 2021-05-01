@@ -13,49 +13,49 @@
 <button @onclick="TriggerFadeOutSecond">FadeOutSecond</button>
 
 @code {
-	protected override async Task OnAfterRenderAsync(bool firstRender)
-	{
-		await base.OnAfterRenderAsync(firstRender);
-		if (firstRender)
-		{
-			await DOM.Select("h1").CSS("background-color", "gray");
-		}
-	}
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            await DOM.Select("h1").CSS("background-color", "gray");
+        }
+    }
 
-	async Task TriggerCSS()
-	{
-		await DOM.Select("h1").CSS("background-color", "red");
-	}
+    async Task TriggerCSS()
+    {
+        await DOM.Select("h1").CSS("background-color", "red");
+    }
 
-	async Task TriggerWidth()
-	{
-		var width = await DOM.Select("h1").Width();
-		await DOM.Select("h1").Width(width / 2);
-	}
+    async Task TriggerWidth()
+    {
+        var width = await DOM.Select("h1").Width();
+        await DOM.Select("h1").Width(width / 2);
+    }
 
-	async Task TriggerHeight()
-	{
-		var height = await DOM.Select("h1").Height();
-		await DOM.Select("h1").Height(height * 2);
-	}
+    async Task TriggerHeight()
+    {
+        var height = await DOM.Select("h1").Height();
+        await DOM.Select("h1").Height(height * 2);
+    }
 
-	async Task TriggerText()
-	{
-		await DOM.Select("h1").Text("Now this text is changed").CSS("color", "yellow");
-	}
+    async Task TriggerText()
+    {
+        await DOM.Select("h1").Text("Now this text is changed").CSS("color", "yellow");
+    }
 
-	async Task TriggerFadeOut()
-	{
-		await DOM.Select("h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
-	}
+    async Task TriggerFadeOut()
+    {
+        await DOM.Select("h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
+    }
 
-	async Task TriggerFadeOutFirst()
-	{
-		await DOM.Select("#first_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
-	}
+    async Task TriggerFadeOutFirst()
+    {
+        await DOM.Select("#first_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
+    }
 
-	async Task TriggerFadeOutSecond()
-	{
-		await DOM.Select("#second_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
-	}
+    async Task TriggerFadeOutSecond()
+    {
+        await DOM.Select("#second_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
+    }
 }
