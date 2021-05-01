@@ -53,4 +53,13 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<EmbeddedResource Update="wwwroot\blazorQuery.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Update="wwwroot\jQuery.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+
 </Project>

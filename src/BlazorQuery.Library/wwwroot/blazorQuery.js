@@ -11,6 +11,7 @@ blazorQueryInterop.BQ_Select = (selector) => {
 			Id: $(this).attr('id'),
 			Name: $(this).attr('name'),
 			Value: $(this).attr('value'),
+			Href: $(this).attr('href'),
 			Text: $(this).text()
 		};
 	}).get();
