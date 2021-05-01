@@ -9,8 +9,9 @@ namespace BlazorQuery.Library
 
         public ActionWrapper(Action<T> action)
         {
-            this._action = action;
+            _action = action;
         }
+
         // Callbacks
         [JSInvokable]
         public void ActionCallback(T obj)

@@ -4,73 +4,67 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
+using BlazorQuery.Library.Elements;
 
 namespace BlazorQuery.Library
 {
 
     public class BlazorQueryDOM : ComponentBase
     {
-        private IJSRuntime JSRuntime { get; set; }
+        private IJSRuntime JsRuntime { get; }
 
         public List<BlazorQueryDOMElement> Elements { get; private set; }
+
         private string CurrentSelector { get; set; }
 
-        public BlazorQueryDOM(IJSRuntime JSRuntime)
+        public BlazorQueryDOM(IJSRuntime jsRuntime)
         {
-            this.JSRuntime = JSRuntime;
+            JsRuntime = jsRuntime;
             Elements = new List<BlazorQueryDOMElement>();
         }
 
         public async Task<BlazorQueryDOM> Select(string selector)
         {
-            BlazorQueryDOM dom = new BlazorQueryDOM(JSRuntime);
-            dom.CurrentSelector = selector;
-            var data = await JSRuntime.InvokeAsync<string>(BlazorQueryList.Select, selector);
-            dom.Elements = JsonSerializer.Deserialize<List<BlazorQueryDOMElement>>(data);
+            var data = await JsRuntime.InvokeAsync<string>(BlazorQueryList.Select, selector);
 
-            return dom;
+            return new BlazorQueryDOM(JsRuntime)
+            {
+                CurrentSelector = selector,
+                Elements = JsonSerializer.Deserialize<List<BlazorQueryDOMElement>>(data)
+            };
         }
 
         // Utilities
-        public async Task Alert(string message) => await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Utils_Alert, message);
-        public async Task ConsoleLog(string message) => await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Utils_ConsoleLog, message);
+        public async Task Alert(string message) => await JsRuntime.InvokeAsync<Task>(BlazorQueryList.Utils_Alert, message);
+
+        public async Task ConsoleLog(string message) => await JsRuntime.InvokeAsync<Task>(BlazorQueryList.Utils_ConsoleLog, message);
 
         // Functions - Actions
-        public async Task<BlazorQueryDOM> AddClass(string className) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.AddClass, CurrentSelector, className); return this; }
-        public async Task<BlazorQueryDOM> RemoveClass(string className) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.RemoveClass, CurrentSelector, className); return this; }
-        public async Task<BlazorQueryDOM> CSS(string style, string styleValue) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.CSS, CurrentSelector, style, styleValue); return this; }
-        public async Task<BlazorQueryDOM> Height(int height) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Height_Set, CurrentSelector, height); return this; }
-        public async Task<BlazorQueryDOM> Width(int width) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Width_Set, CurrentSelector, width); return this; }
-        public async Task<BlazorQueryDOM> Text(string text) { await JSRuntime.InvokeAsync<Task>(BlazorQueryList.Text_Set, CurrentSelector, text); return this; }
-        public async Task<BlazorQueryDOM> FadeOut(Action<string> completed) 
+        public async Task<BlazorQueryDOM> AddClass(string className) { await JsRuntime.InvokeAsync<Task>(BlazorQueryList.AddClass, CurrentSelector, className); return this; }
+
+        public async Task<BlazorQueryDOM> RemoveClass(string className) { await JsRuntime.InvokeAsync<Task>(BlazorQueryList.RemoveClass, CurrentSelector, className); return this; }
+
+        public async Task<BlazorQueryDOM> CSS(string style, string styleValue) { await JsRuntime.InvokeAsync<Task>(BlazorQueryList.CSS, CurrentSelector, style, styleValue); return this; }
+
+        public async Task<BlazorQueryDOM> Height(double height) { await JsRuntime.InvokeAsync<Task>(BlazorQueryList.Height_Set, CurrentSelector, height); return this; }
+
+        public async Task<BlazorQueryDOM> Width(double width) { await JsRuntime.InvokeAsync<Task>(BlazorQueryList.Width_Set, CurrentSelector, width); return this; }
+
+        public async Task<BlazorQueryDOM> Text(string text) { await JsRuntime.InvokeAsync<Task>(BlazorQueryList.Text_Set, CurrentSelector, text); return this; }
+
+        public async Task<BlazorQueryDOM> FadeOut(Action<string> completed)
         {
             var actionWrapper = new ActionWrapper<string>(completed);
             var dotNetObjectReference = DotNetObjectReference.Create(actionWrapper);
-            await JSRuntime.InvokeAsync<Task>(BlazorQueryList.FadeOut, CurrentSelector, dotNetObjectReference); 
-            return this; 
+            await JsRuntime.InvokeAsync<Task>(BlazorQueryList.FadeOut, CurrentSelector, dotNetObjectReference);
+            return this;
         }
 
         // Functions - Chain-enders
-        public async Task<int> Height() => await JSRuntime.InvokeAsync<int>(BlazorQueryList.Height_Get, CurrentSelector);
-        public async Task<int> Width() => await JSRuntime.InvokeAsync<int>(BlazorQueryList.Width_Get, CurrentSelector);
-        public async Task<string> Text() => await JSRuntime.InvokeAsync<string>(BlazorQueryList.Text_Get, CurrentSelector);
+        public async Task<double> Height() => await JsRuntime.InvokeAsync<double>(BlazorQueryList.Height_Get, CurrentSelector);
 
-    }
+        public async Task<double> Width() => await JsRuntime.InvokeAsync<double>(BlazorQueryList.Width_Get, CurrentSelector);
 
-    public static class BlazorQueryDOMHelpers
-    {
-        // Functions - Actions
-        public async static Task<BlazorQueryDOM> AddClass(this Task<BlazorQueryDOM> dom, string className) => await (await dom).AddClass(className);
-        public async static Task<BlazorQueryDOM> RemoveClass(this Task<BlazorQueryDOM> dom, string className) => await (await dom).RemoveClass(className);
-        public async static Task<BlazorQueryDOM> CSS(this Task<BlazorQueryDOM> dom, string style, string styleValue) => await (await dom).CSS(style, styleValue);
-        public async static Task<BlazorQueryDOM> Height(this Task<BlazorQueryDOM> dom, int height) => await (await dom).Height(height);
-        public async static Task<BlazorQueryDOM> Width(this Task<BlazorQueryDOM> dom, int width) => await (await dom).Width(width);
-        public async static Task<BlazorQueryDOM> Text(this Task<BlazorQueryDOM> dom, string text) => await (await dom).Text(text);
-        public async static Task<BlazorQueryDOM> FadeOut(this Task<BlazorQueryDOM> dom, Action<string> completed) => await (await dom).FadeOut(completed);
-
-        // Functions - Chain-enders
-        public async static Task<int> Height(this Task<BlazorQueryDOM> dom) => await (await dom).Height();
-        public async static Task<int> Width(this Task<BlazorQueryDOM> dom) => await (await dom).Width();
-        public async static Task<string> Text(this Task<BlazorQueryDOM> dom) => await (await dom).Text();
+        public async Task<string> Text() => await JsRuntime.InvokeAsync<string>(BlazorQueryList.Text_Get, CurrentSelector);
     }
 }

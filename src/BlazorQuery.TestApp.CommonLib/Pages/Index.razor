@@ -13,7 +13,6 @@
 <button @onclick="TriggerFadeOutSecond">FadeOutSecond</button>
 
 @code {
-
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
@@ -30,8 +29,8 @@
 
     async Task TriggerWidth()
     {
-        int width = await DOM.Select("h1").Width();
-        await DOM.Select("h1").Width(Convert.ToInt32(width / 2));
+        var width = await DOM.Select("h1").Width();
+        await DOM.Select("h1").Width(width / 2);
     }
 
     async Task TriggerHeight()
@@ -59,5 +58,4 @@
     {
         await DOM.Select("#second_h1").FadeOut(async s => { await DOM.Alert("JPP from CS : " + s); });
     }
-
 }

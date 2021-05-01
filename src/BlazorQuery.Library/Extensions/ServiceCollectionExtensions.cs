@@ -1,8 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BlazorQuery.Library.Extensions
 {
