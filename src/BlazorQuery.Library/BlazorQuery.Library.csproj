@@ -7,28 +7,21 @@
     <RootNamespace>BlazorQuery.Library</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>KevinJPetersen and contributors</Authors>
     <RepositoryUrl>https://github.com/kevinjpetersen/BlazorQuery</RepositoryUrl>
     <PackageProjectUrl>https://github.com/kevinjpetersen/BlazorQuery</PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Blazor, Razor, jQuery, Query, CSharp, DOM, Manipulation</PackageTags>
-    <PackageReleaseNotes>
-      Version 0.0.2 - 2020-07-29 | Functionality added
-      * Update projects to build with latest version of Blazor
-      * Migration from blazor preview --&gt; blazor release
-      * Starting wrapping fadein and fadeout
-      * New testapp to test with blazor webassembly, and refactoring to make common code between the 2 testaspp
-      Version 0.0.1 - 2019-07-09 | Functionality added
-      * Added Select (Equivalent to $/jQuery, to select elements)
-      * Added AddClass, RemoveClass,
-      * Added Height (Set &amp; Get), Width (Set &amp; Get)
-      * Added Text (Set &amp; Get)
-      * Added CSS
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>Version 0.0.3 - 2021-05-01
+* Migrated to .NET 5 and updated all packages to .NET 5 versions
+* Some cleanup, such as moving BlazorQueryDOMHelpers to a new file
+* Fixed a bug where Height and Width on DOM element needed to be double
+* Added "href" to DOM element</PackageReleaseNotes>
     <Description>BlazorQuery is a Blazor Library that wraps jQuery in C# so that DOM Manipulation, Ajax, etc, can be done directly without leaving the comfort of C#.</Description>
     <Copyright>MIT License</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageId>BlazorQuery</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
